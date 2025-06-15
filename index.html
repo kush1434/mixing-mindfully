@@ -4,55 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mixing Mindfully</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5F0E7',
+            deepnavy: '#1D2A32',
+            slategrey: '#1E2B33',
+            warmbeige: '#F3DEC4'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-[#fdfaf5] text-gray-800 font-sans">
+<body class="bg-cream text-deepnavy font-serif">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 border-b border-gray-300 bg-cream">
+    <div class="text-xl font-bold tracking-tight">Mixing Mindfully</div>
+    <ul class="flex gap-6 text-sm font-medium">
+      <li><a href="#" class="hover:underline">Home</a></li>
+      <li><a href="recipes.html" class="hover:underline">Recipes</a></li>
+      <li><a href="about.html" class="hover:underline">About</a></li>
+      <li><a href="blog.html" class="hover:underline">Blog</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="px-6 py-20 text-center">
-    <h1 class="text-5xl font-bold mb-4 tracking-tight">Mixing Mindfully</h1>
-    <p class="text-lg max-w-xl mx-auto mb-6 text-gray-600">
-      Healthy, low-glycemic baking recipes that taste just as sweet. Educate your cravings—one mindful mix at a time.
+  <section class="px-6 py-24 bg-slategrey text-center text-warmbeige">
+    <h1 class="text-5xl font-semibold mb-4">Rustic Wellness Baking</h1>
+    <p class="text-lg max-w-xl mx-auto">
+      Healthy recipes baked with intention. Explore low-glycemic treats that nourish and delight.
     </p>
-    <button class="mt-4 px-6 py-3 bg-amber-400 hover:bg-amber-300 text-white font-semibold rounded-2xl transition-transform transform hover:scale-105">
-      View Recipe of the Week
-    </button>
+  </section>
+
+  <!-- Section Header Example -->
+  <section class="px-6 py-10 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold font-serif mb-4">By Country</h2>
+    <p class="text-deepnavy/80">Explore recipes inspired by flavors around the world.</p>
   </section>
 
   <!-- Feature Recipe Section -->
-  <section class="px-6 py-16 bg-white rounded-3xl max-w-4xl mx-auto shadow-xl transition-all duration-500 hover:shadow-2xl">
-    <h2 class="text-3xl font-semibold mb-4 text-left">This Week's Feature</h2>
+  <section class="px-6 py-16 bg-white max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 font-serif">This Week's Feature</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <img
-        src="images/recipe.jpg"
-        alt="Diabetes-friendly brownie"
-        class="rounded-xl shadow-md hover:shadow-lg transition duration-300"
-      />
+      <img src="images/recipe.jpg" alt="Recipe" class="rounded-xl shadow" />
       <div>
-        <h3 class="text-2xl font-bold mb-2">Fudgy Almond Flour Brownies</h3>
-        <p class="text-gray-600 mb-4">
-          Sweetened with monk fruit and made with almond flour for a blood sugar–friendly indulgence.
-        </p>
-        <button class="px-4 py-2 bg-rose-500 hover:bg-rose-400 text-white rounded-xl transition-all duration-300">
-          View Full Recipe
-        </button>
+        <h3 class="text-2xl font-semibold mb-2 font-serif">Almond Flour Banana Bread</h3>
+        <p class="text-deepnavy/80 mb-4">A moist, naturally sweetened loaf using almond flour and monk fruit.</p>
+        <button class="px-5 py-3 bg-deepnavy text-white rounded hover:bg-deepnavy/90 transition">View Full Recipe</button>
       </div>
     </div>
   </section>
 
-  <!-- Email Signup Section -->
-  <section class="px-6 py-20 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6">Stay in the Mix</h2>
-    <form class="flex flex-col md:flex-row gap-4">
+  <!-- Newsletter Section -->
+  <section class="px-6 py-20 bg-cream max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4 font-serif">Stay in the Mix</h2>
+    <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
       <input
         type="email"
         placeholder="Enter your email"
-        class="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-400 transition"
+        class="flex-1 px-4 py-3 rounded border border-gray-300 focus:ring-2 focus:ring-deepnavy"
       />
-      <button
-        type="submit"
-        class="px-6 py-3 bg-amber-500 text-white rounded-xl hover:bg-amber-400 transition-transform transform hover:scale-105"
-      >
+      <button type="submit" class="px-6 py-3 bg-slategrey text-white rounded hover:bg-slategrey/90 transition">
         Subscribe
       </button>
     </form>
