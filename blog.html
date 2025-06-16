@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mixing Mindfully</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1D2A32',
+            softgray: '#F5F5F5',
+            darkgray: '#4B5563',
+            white: '#FFFFFF'
+          },
+          fontFamily: {
+            heading: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Open Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Optional: Smooth Fade -->
+  <style>
+    body.fade-out {
+      transform: translateX(-30px) scale(0.97);
+      filter: blur(2px);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+
+<body class="fade-out bg-softgray text-darkgray font-body">
+
+  <!-- Navbar -->
+  <nav class="bg-navy text-white px-6 py-4 flex justify-between items-center shadow">
+    <h1 class="font-heading text-3xl transition-all duration-300 hover:tracking-wider">Mixing Mindfully</h1>
+    <ul class="flex gap-6 text-lg font-heading text-white">
+      <li><a href="index.html" class="relative hover:text-softgray after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-softgray after:w-0 hover:after:w-full after:transition-all after:duration-300">Home</a></li>
+      <li><a href="recipes.html" class="relative hover:text-softgray after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-softgray after:w-0 hover:after:w-full after:transition-all after:duration-300">Recipes</a></li>
+      <li><a href="blog.html" class="relative hover:text-softgray after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-softgray after:w-0 hover:after:w-full after:transition-all after:duration-300">Blog</a></li>
+      <li><a href="about.html" class="relative hover:text-softgray after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-softgray after:w-0 hover:after:w-full after:transition-all after:duration-300">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-white text-navy py-16 px-6 text-center">
+    <h2 class="font-heading text-4xl font-bold mb-2">Page Title</h2>
+    <p class="max-w-2xl mx-auto text-lg">Add a short tagline or page description here to give context.</p>
+  </header>
+
+  <!-- Page Content Placeholder -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <h3 class="font-heading text-2xl text-navy mb-4">Section Title</h3>
+      <p class="text-darkgray leading-relaxed">
+        This is where you can add content for your Recipes, Blog, or About page.
+        Replace this with dynamic content or hand-written descriptions depending on your goals.
+      </p>
+    </div>
+  </main>
+
+  <!-- Smooth Page Transition Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.remove("fade-out");
+
+      document.querySelectorAll("a[href]").forEach(link => {
+        if (link.hostname === window.location.hostname && !link.hasAttribute("target")) {
+          link.addEventListener("click", e => {
+            e.preventDefault();
+            const href = link.getAttribute("href");
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
